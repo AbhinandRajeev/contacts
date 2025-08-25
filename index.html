@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact List</title>
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+  <!-- JS File -->
+  <script src="script.js" defer></script>
+</head>
+<body class="min-h-screen bg-gray-100 text-gray-800">
+  <main class="mx-auto max-w-4xl px-6 py-10">
+    <h1 class="text-4xl font-bold mb-6">📒 Contact List</h1>
+
+    <!-- Input Section -->
+    <div class="flex flex-col md:flex-row items-center gap-3">
+      <input id="nameInput" type="text" placeholder="Enter Name…" class="flex-1 rounded-lg border px-4 py-2"/>
+      <input id="phoneInput" type="text" placeholder="Enter Phone Number…" class="flex-1 rounded-lg border px-4 py-2"/>
+      <button type="button" onclick="addContact()" class="px-5 py-2 bg-green-600 text-white rounded-lg flex items-center gap-2">
+        <i class="fas fa-plus"></i> Add
+      </button>
+    </div>
+
+    <!-- Contact List -->
+    <ul id="contactList" class="mt-8 space-y-3"></ul>
+  </main>
+</body>
+</html>
