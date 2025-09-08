@@ -1,31 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact List</title>
-  <!-- Tailwind -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
-  <!-- JS File -->
-  <script src="script.js" defer></script>
-</head>
-<body class="min-h-screen bg-gray-100 text-gray-800">
-  <main class="mx-auto max-w-4xl px-6 py-10">
-    <h1 class="text-4xl font-bold mb-6">📒 Contact List</h1>
 
-    <!-- Input Section -->
-    <div class="flex flex-col md:flex-row items-center gap-3">
-      <input id="nameInput" type="text" placeholder="Enter Name…" class="flex-1 rounded-lg border px-4 py-2"/>
-      <input id="phoneInput" type="text" placeholder="Enter Phone Number…" class="flex-1 rounded-lg border px-4 py-2"/>
-      <button type="button" onclick="addContact()" class="px-5 py-2 bg-green-600 text-white rounded-lg flex items-center gap-2">
-        <i class="fas fa-plus"></i> Add
-      </button>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+
+  <script src="script.js"></script>
+</head>
+
+<body class="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-black text-gray-100">
+  <main class="mx-auto max-w-5xl px-6 py-10">
+    <h1 class="text-4xl font-bold mb-8 text-center text-green-400 drop-shadow-md">
+      📒 Contact List
+    </h1>
+
+
+    <div class="bg-gray-800 rounded-2xl shadow-xl p-6 mb-10 border border-gray-700">
+      <h2 class="text-2xl font-semibold mb-4 text-green-300">Add New Contact</h2>
+      <div class="flex flex-col md:flex-row gap-4 items-center">
+
+        <div class="flex-1 flex flex-col gap-3 w-full">
+          <input id="nameInput" type="text" placeholder="Enter Name…"
+            class="w-full rounded-lg border border-gray-600 bg-gray-900 text-gray-100 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-400" />
+
+          <div class="flex gap-2">
+            <select id="countryCode"
+              class="rounded-lg border border-gray-600 bg-gray-900 text-gray-100 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-400">
+              <option value="+1">🇺🇸 +1</option>
+              <option value="+44">🇬🇧 +44</option>
+              <option value="+91" selected>🇮🇳 +91</option>
+              <option value="+61">🇦🇺 +61</option>
+              <option value="+81">🇯🇵 +81</option>
+            </select>
+            <input id="phoneInput" type="text" placeholder="Phone Number…"
+              class="flex-1 rounded-lg border border-gray-600 bg-gray-900 text-gray-100 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-400" />
+          </div>
+        </div>
+
+        <button type="button" onclick="addContact()"
+          class="px-5 py-2 bg-green-600 text-white rounded-lg flex items-center gap-2 hover:bg-green-500 transition transform hover:scale-105 shadow-md">
+          <i class="fas fa-plus"></i> Add
+        </button>
+      </div>
     </div>
 
-    <!-- Contact List -->
-    <ul id="contactList" class="mt-8 space-y-3"></ul>
+    <div id="contactList" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
   </main>
 </body>
+
 </html>
